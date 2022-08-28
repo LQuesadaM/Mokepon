@@ -1,7 +1,15 @@
 let ataqueJugador
 let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
 
 function iniciarJuego() {
+    let sectionSeleccionarAtaque = document.querySelector('#seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'none'
+
+    let sectionReiniciar = document.querySelector('#reiniciar')
+    sectionReiniciar.style.display = 'none'
+
     let botonMascotaJugador = document.querySelector('#boton-mascota')
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)  
 
@@ -11,9 +19,19 @@ function iniciarJuego() {
     botonAgua.addEventListener('click', ataqueAgua)
     let botonTierra = document.querySelector('#boton-tierra')
     botonTierra.addEventListener('click', ataqueTierra)
+
+    let botonReiniciar = document.querySelector('#boton-reiniciar')
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function seleccionarMascotaJugador() {
+    let sectionSeleccionarMascota = document.querySelector('#seleccionar-mascota')
+    sectionSeleccionarMascota.style.display = 'none'
+
+    let sectionSeleccionarAtaque = document.querySelector('#seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'block'
+
+
     let inputHipodoge = document.querySelector('#hipodoge')
     let inputCapipepo = document.querySelector('#capipepo')
     let inputRatigueya = document.querySelector('#ratigueya')
@@ -30,6 +48,7 @@ function seleccionarMascotaJugador() {
         alert('Selecciona una mascota')
     }
 
+    
     seleccionarMascotaEnemigo()
 }
 
@@ -46,9 +65,6 @@ function seleccionarMascotaEnemigo() {
     }
 }
 
-function numeroAleatorio(min, max) {
-    return Math.floor(Math.random() * (max-min + 1) + min)
-}
 
 function ataqueFuego() {
     ataqueJugador = 'FUEGO'
@@ -76,17 +92,75 @@ function ataqueAleatorioEnemigo() {
         ataqueEnemigo = 'TIERRA'
     }
 
-    crearMensaje()
+    combate()
 }
 
-function crearMensaje() {
+function combate() {
+    let spanVidasJugador = document.querySelector('#vidas-jugador')
+    let spanVidasEnemigo = document.querySelector('#vidas-enemigo')   
+
+    if (ataqueEnemigo == ataqueJugador) {
+        crearMensaje('EMPATE!🤝')
+    } else if (ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA') {
+        crearMensaje('GANASTE!🏆')
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else if (ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO') {
+        crearMensaje('GANASTE!🏆')
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else if (ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA') {
+        crearMensaje = 'GANASTE!🏆'
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else {
+        crearMensaje('PERDISTE!😢')
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
+    }
+
+    revizarVidas()
+    desabilitarBotonesElementos()
+}
+
+function revizarVidas() {
+    if (vidasEnemigo == 0) {
+        alert('GANASTE EL JUEGO!🎉')
+    } else if (vidasJugador == 0) {
+        alert('PERDISTE EL JUEGO!😜')
+    }
+    
+}
+
+function crearMensaje(resultado) {
     let sectionMensajes = document.querySelector('#mensajes')
+
     let parrafo = document.createElement('p')
-    parrafo.innerHTML = `Tu mascota atacó con ${ataqueJugador}, la mascota del enemigo atacó con ${ataqueEnemigo}` 
+    parrafo.innerHTML = `Tu mascota atacó con ${ataqueJugador}, la mascota del enemigo atacó con ${ataqueEnemigo}, ${resultado}` 
     sectionMensajes.appendChild(parrafo)
 }
 
+function desabilitarBotonesElementos() {
+    if (vidasJugador == 0 || vidasEnemigo == 0) {
+        let botonFuego = document.querySelector('#boton-fuego')
+        botonFuego.disabled = true
+        let botonAgua = document.querySelector('#boton-agua')
+        botonAgua.disabled = true
+        let botonTierra = document.querySelector('#boton-tierra')
+        botonTierra.disabled = true
 
+        let sectionReiniciar = document.querySelector('#reiniciar')
+        sectionReiniciar.style.display = 'block'
+    }
+}
+
+function reiniciarJuego() {
+    location.reload()
+}
+
+function numeroAleatorio(min, max) {
+    return Math.floor(Math.random() * (max-min + 1) + min)
+}
 
 window.addEventListener('load', iniciarJuego)
 
