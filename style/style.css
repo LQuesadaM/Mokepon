@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.titulo {
+    background-color: teal;
+    color: hotpink;
+    width: 310px;
+    height: 50px;
+    text-align: center;
+}
+
+#seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta-de-mokepone {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    padding: 10px;
+    margin: 10px;
+}
+
+input {
+    display: none;
+}
