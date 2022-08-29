@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 * {
     margin: 0;
@@ -6,12 +7,20 @@
     box-sizing: border-box;
 }
 
-.titulo {
+body {
+    font-family: 'Fredoka One', cursive;
     background-color: teal;
-    color: hotpink;
-    width: 310px;
-    height: 50px;
-    text-align: center;
+}
+
+.titulo {
+    color: #ecb95c;
+    font-size: 50px;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+}
+
+.subtitulo {
+    color: #ecb95c;
 }
 
 #seleccionar-mascota {
@@ -21,12 +30,40 @@
     align-items: center;
 }
 
+.tarjetas {
+    display: flex;
+    border: 4px solid black;
+    height: 20vh;
+    align-items: center;
+    margin: 40px 0;
+}
+
 .tarjeta-de-mokepone {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-color: aquamarine;
     padding: 10px;
     margin: 10px;
+    border-radius: 30px;
+    
+}
+
+#tarjeta-hipodoge {
+    background-image: url(/imagen/hipodoge.png);
+    background-size: cover;
+    text-align: center;
+}
+
+#tarjeta-capipepo {
+    background-image: url(/imagen/capipepo.png);
+    background-size: cover;
+    text-align: center;
+}
+
+#tarjeta-ratigueya {
+    background-image: url(/imagen/ratigueya.png);
+    background-size: cover;
+    text-align: center;
 }
 
 input {
