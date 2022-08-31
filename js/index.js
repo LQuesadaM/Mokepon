@@ -135,6 +135,17 @@ function revizarVidas() {
 
 
 function crearMensaje(resultado) {
+    // Seleccionar elemento padre
+
+
+    //Crear nodos
+
+    
+    // Agregar nodos
+
+
+
+    /*
     //Crear nodos
     let parrafo = document.createElement('p')
 
@@ -145,6 +156,7 @@ function crearMensaje(resultado) {
     sectionMensaje.appendChild(parrafo)
 
     parrafo.innerHTML = `Tu mascota atacó con ${ataqueJugador}, la mascota del enemigo atacó con ${ataqueEnemigo}, ${resultado}`  
+    */
 }
 
 
