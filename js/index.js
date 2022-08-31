@@ -29,7 +29,7 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display = 'none'
 
     let sectionSeleccionarAtaque = document.querySelector('#seleccionar-ataque')
-    sectionSeleccionarAtaque.style.display = 'block'
+    sectionSeleccionarAtaque.style.display = 'flex'
 
 
     let inputHipodoge = document.querySelector('#hipodoge')
@@ -46,6 +46,7 @@ function seleccionarMascotaJugador() {
         spanMascotaJugador.innerHTML = 'Ratigueya'
     } else {
         alert('Selecciona una mascota')
+        reiniciarJuego()
     }
 
     
@@ -110,7 +111,7 @@ function combate() {
         vidasEnemigo--
         spanVidasEnemigo.innerHTML = vidasEnemigo
     } else if (ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA') {
-        crearMensaje = 'GANASTE!🏆'
+        crearMensaje('GANASTE!🏆')
         vidasEnemigo--
         spanVidasEnemigo.innerHTML = vidasEnemigo
     } else {
@@ -133,11 +134,30 @@ function revizarVidas() {
 }
 
 function crearMensaje(resultado) {
-    let sectionMensajes = document.querySelector('#mensajes')
+    let sectionMensajes = document.querySelector('#resultados')
+    let ataquesDelJugador = document.querySelector('#ataque-del-jugador')
+    let ataquesDelEnemigo = document.querySelector('#ataques-del-enemigo')
+
+
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
+
+    sectionMensajes.innerHTML = resultado
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+
+    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
+    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
+
+    
+
 
     let parrafo = document.createElement('p')
     parrafo.innerHTML = `Tu mascota atacó con ${ataqueJugador}, la mascota del enemigo atacó con ${ataqueEnemigo}, ${resultado}` 
-    sectionMensajes.appendChild(parrafo)
+    
+    
+
+
 }
 
 function desabilitarBotonesElementos() {
