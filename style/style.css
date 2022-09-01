@@ -114,25 +114,17 @@ input {
     margin-bottom: 20px;
 }
 
-/* Section resultados */
-/* .box-container {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid aquamarine;
-}
-
-#container-mensajes {
-    display: flex;
-}
-
-.box-item{
-    display: flex;
-    flex-direction: column;
+.container-mensajes {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
     color: white;
-    gap: 16px;
-    margin: 4px 20px;
-    align-items: center;
+    justify-items: center;
 }
- */
 
- 
+.box-container {
+    display: grid;
+    justify-items: center; 
+}
+
+
+

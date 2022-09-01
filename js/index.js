@@ -136,14 +136,14 @@ function revizarVidas() {
 
 function crearMensaje(resultado) {
     // Seleccionar elemento padre
-    let spanAtaqueDelJugador = document.querySelector('.ataque-del-jugador')
-    let spanAtaqueDelEnemigo = document.querySelector('.ataque-del-enemigo')
-    let spanResultadoBatalla = document.querySelector('.resultado-batalla')
+    let spanAtaqueDelJugador = document.querySelector('#ataque-del-jugador')
+    let spanAtaqueDelEnemigo = document.querySelector('#ataque-del-enemigo')
+    let spanResultadoBatalla = document.querySelector('#resultado-batalla')
 
     //Crear nodos
-    let elementoAtaqueJugador = document.createElement('span')
-    let elementoAtaqueEnemigo = document.createElement('span')
-    let resultadoBatalla = document.createElement('span')
+    let elementoAtaqueJugador = document.createElement('p')
+    let elementoAtaqueEnemigo = document.createElement('p')
+    let resultadoBatalla = document.createElement('p')
     
     // Agregar nodos
     spanAtaqueDelJugador.appendChild(elementoAtaqueJugador)
@@ -152,7 +152,7 @@ function crearMensaje(resultado) {
 
     elementoAtaqueJugador.innerHTML = ataqueJugador
     elementoAtaqueEnemigo.innerHTML = ataqueEnemigo
-    resultadoBatalla.innerHTML = resultado
+    /* resultadoBatalla.innerHTML = resultado */
 }
 
 function desabilitarBotonesElementos() {
