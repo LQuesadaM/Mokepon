@@ -136,30 +136,24 @@ function revizarVidas() {
 
 function crearMensaje(resultado) {
     // Seleccionar elemento padre
-
+    let spanAtaqueDelJugador = document.querySelector('.ataque-del-jugador')
+    let spanAtaqueDelEnemigo = document.querySelector('.ataque-del-enemigo')
+    let spanResultadoBatalla = document.querySelector('.resultado-batalla')
 
     //Crear nodos
-
+    let elementoAtaqueJugador = document.createElement('span')
+    let elementoAtaqueEnemigo = document.createElement('span')
+    let resultadoBatalla = document.createElement('span')
     
     // Agregar nodos
+    spanAtaqueDelJugador.appendChild(elementoAtaqueJugador)
+    spanAtaqueDelEnemigo.appendChild(elementoAtaqueEnemigo)
+    spanResultadoBatalla.appendChild(resultadoBatalla)
 
-
-
-    /*
-    //Crear nodos
-    let parrafo = document.createElement('p')
-
-    // Seleccionar elemento padre
-    let sectionMensaje = document.querySelector('#mensajes')
-    
-    // Agregar nodos
-    sectionMensaje.appendChild(parrafo)
-
-    parrafo.innerHTML = `Tu mascota atacó con ${ataqueJugador}, la mascota del enemigo atacó con ${ataqueEnemigo}, ${resultado}`  
-    */
+    elementoAtaqueJugador.innerHTML = ataqueJugador
+    elementoAtaqueEnemigo.innerHTML = ataqueEnemigo
+    resultadoBatalla.innerHTML = resultado
 }
-
-
 
 function desabilitarBotonesElementos() {
     if (vidasJugador == 0 || vidasEnemigo == 0) {

@@ -1,9 +1,9 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
@@ -61,7 +61,7 @@ body {
     height: 110px;
 }
 
-#boton-mascota {
+#boton-mascota, #boton-reiniciar {
     width: 180px;
     height: 40px;
     border-radius: 20px;
@@ -73,7 +73,7 @@ body {
     margin-top: 30px;
 }
 
-#boton-mascota:hover {
+#boton-mascota:hover, #boton-reiniciar:hover {
     background: linear-gradient(45deg, #2fa5f4, #f06666);
     text-transform: uppercase;
     font-family: 'Fredoka One', cursive;
@@ -82,7 +82,6 @@ body {
 input {
     display: none;
 }
-
 
 /* Section de Ataques*/
 
@@ -110,3 +109,30 @@ input {
 .boton-de-ataque:active {
     font-family: 'Poppins', sans-serif;
 }
+
+#boton-reiniciar {
+    margin-bottom: 20px;
+}
+
+/* Section resultados */
+/* .box-container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid aquamarine;
+}
+
+#container-mensajes {
+    display: flex;
+}
+
+.box-item{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 16px;
+    margin: 4px 20px;
+    align-items: center;
+}
+ */
+
+ 
