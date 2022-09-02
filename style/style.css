@@ -83,6 +83,10 @@ input {
     display: none;
 }
 
+input:checked + label {
+    background: linear-gradient(45deg, #10659e, #ec2121);
+}
+
 /* Section de Ataques*/
 
 #seleccionar-ataque {
@@ -114,17 +118,49 @@ input {
     margin-bottom: 20px;
 }
 
+.box-container-resultado {
+    display: flex;
+    color: white;
+    font-size: 25px;
+}
+
 .container-mensajes {
     display: grid;
-    grid-template-columns: 150px 150px 150px;
+    margin-top: 50px;
+    grid-template-columns: 200px 200px;
     color: white;
     justify-items: center;
 }
 
 .box-container {
     display: grid;
-    justify-items: center; 
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.container-txt-mascota {
+    font-size: 20px;
+}
+
+.container-vidas {
+    font-size: 20px;
+    margin: 15px 0;
+    border: 2px solid blue;
+    border-radius: 50%; 
 }
 
 
+@media screen and (max-width: 600px) {
+    .tarjetas {
+        display: flex;
+        flex-direction: column;
+    }
 
+    .container-vidas {
+        font-size: 25px;
+        margin: 20px 0; 
+    }
+
+}

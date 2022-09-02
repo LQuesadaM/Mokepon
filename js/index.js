@@ -61,7 +61,7 @@ function seleccionarMascotaEnemigo() {
         spanMascotaEnemigo.innerHTML = 'Hipodoge'
     } else if (mascotaAleatoria == 2) {
         spanMascotaEnemigo.innerHTML = 'Capipepo'
-    } else {
+    } else if (mascotaAleatoria == 3) {
         spanMascotaEnemigo.innerHTML = 'Ratigueya'
     }
 }
@@ -105,19 +105,19 @@ function combate() {
     } else if (ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA') {
         crearMensaje('GANASTE!🏆')
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
+        spanVidasEnemigo.innerHTML = `${vidasEnemigo} 💓`
     } else if (ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO') {
         crearMensaje('GANASTE!🏆')
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
+        spanVidasEnemigo.innerHTML = `${vidasEnemigo} 💓`
     } else if (ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA') {
         crearMensaje('GANASTE!🏆')
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
+        spanVidasEnemigo.innerHTML = `${vidasEnemigo} 💓`
     } else {
         crearMensaje('PERDISTE!😢')
         vidasJugador--
-        spanVidasJugador.innerHTML = vidasJugador
+        spanVidasJugador.innerHTML = `${vidasJugador} 💓`
     }
 
     revizarVidas()
@@ -143,16 +143,16 @@ function crearMensaje(resultado) {
     //Crear nodos
     let elementoAtaqueJugador = document.createElement('p')
     let elementoAtaqueEnemigo = document.createElement('p')
-    let resultadoBatalla = document.createElement('p')
+    /* let resultadoBatalla = document.createElement('p') */
     
     // Agregar nodos
     spanAtaqueDelJugador.appendChild(elementoAtaqueJugador)
     spanAtaqueDelEnemigo.appendChild(elementoAtaqueEnemigo)
-    spanResultadoBatalla.appendChild(resultadoBatalla)
+    /* spanResultadoBatalla.appendChild(resultadoBatalla) */
 
     elementoAtaqueJugador.innerHTML = ataqueJugador
     elementoAtaqueEnemigo.innerHTML = ataqueEnemigo
-    /* resultadoBatalla.innerHTML = resultado */
+    spanResultadoBatalla.innerHTML = resultado
 }
 
 function desabilitarBotonesElementos() {
