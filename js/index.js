@@ -1,16 +1,26 @@
-let sectionSeleccionarAtaque = document.querySelector('#seleccionar-ataque')
-let sectionReiniciar = document.querySelector('#reiniciar')
-let botonMascotaJugador = document.querySelector('#boton-mascota')
-let botonFuego = document.querySelector('#boton-fuego')
-let botonAgua = document.querySelector('#boton-agua')
-let botonTierra = document.querySelector('#boton-tierra')
-let botonReiniciar = document.querySelector('#boton-reiniciar')
-let sectionSeleccionarMascota = document.querySelector('#seleccionar-mascota')
-let inputHipodoge = document.querySelector('#hipodoge')
-let inputCapipepo = document.querySelector('#capipepo')
-let inputRatigueya = document.querySelector('#ratigueya')
-let spanMascotaJugador = document.querySelector('#mascota-jugador')
-let spanMascotaEnemigo = document.querySelector('#mascota-enemigo')
+const sectionSeleccionarAtaque = document.querySelector('#seleccionar-ataque')
+const sectionReiniciar = document.querySelector('#reiniciar')
+const botonMascotaJugador = document.querySelector('#boton-mascota')
+
+const botonFuego = document.querySelector('#boton-fuego')
+const botonAgua = document.querySelector('#boton-agua')
+const botonTierra = document.querySelector('#boton-tierra')
+const botonReiniciar = document.querySelector('#boton-reiniciar')
+const sectionSeleccionarMascota = document.querySelector('#seleccionar-mascota')
+
+const inputHipodoge = document.querySelector('#hipodoge')
+const inputCapipepo = document.querySelector('#capipepo')
+const inputRatigueya = document.querySelector('#ratigueya')
+
+const spanMascotaJugador = document.querySelector('#mascota-jugador')
+const spanMascotaEnemigo = document.querySelector('#mascota-enemigo')
+
+const spanVidasJugador = document.querySelector('#vidas-jugador')
+const spanVidasEnemigo = document.querySelector('#vidas-enemigo')
+
+const spanAtaqueDelJugador = document.querySelector('#ataque-del-jugador')
+const spanAtaqueDelEnemigo = document.querySelector('#ataque-del-enemigo')
+const spanResultadoBatalla = document.querySelector('#resultado-batalla')
 
 let ataqueJugador
 let ataqueEnemigo
@@ -77,7 +87,6 @@ function ataqueTierra() {
 
 function ataqueAleatorioEnemigo() {
     let ataqueAleatorio = numeroAleatorio(1, 3)
-    
     if (ataqueAleatorio == 1) {
         ataqueEnemigo = 'FUEGO'
     } else if (ataqueAleatorio == 2) {
@@ -89,10 +98,7 @@ function ataqueAleatorioEnemigo() {
     combate()
 }
 
-function combate() {
-    let spanVidasJugador = document.querySelector('#vidas-jugador')
-    let spanVidasEnemigo = document.querySelector('#vidas-enemigo')   
-
+function combate() {  
     if (ataqueEnemigo == ataqueJugador) {
         crearMensaje('EMPATE!🤝')
     } else if (ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA') {
@@ -126,13 +132,9 @@ function revizarVidas() {
     
 }
 
-
 function crearMensaje(resultado) {
     // Seleccionar elemento padre
-    let spanAtaqueDelJugador = document.querySelector('#ataque-del-jugador')
-    let spanAtaqueDelEnemigo = document.querySelector('#ataque-del-enemigo')
-    let spanResultadoBatalla = document.querySelector('#resultado-batalla')
-
+    
     //Crear nodos
     let elementoAtaqueJugador = document.createElement('p')
     let elementoAtaqueEnemigo = document.createElement('p')
@@ -150,14 +152,10 @@ function crearMensaje(resultado) {
 
 function desabilitarBotonesElementos() {
     if (vidasJugador == 0 || vidasEnemigo == 0) {
-        let botonFuego = document.querySelector('#boton-fuego')
         botonFuego.disabled = true
-        let botonAgua = document.querySelector('#boton-agua')
         botonAgua.disabled = true
-        let botonTierra = document.querySelector('#boton-tierra')
         botonTierra.disabled = true
-
-        let sectionReiniciar = document.querySelector('#reiniciar')
+        
         sectionReiniciar.style.display = 'block'
     }
 }
