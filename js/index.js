@@ -1,42 +1,35 @@
+let sectionSeleccionarAtaque = document.querySelector('#seleccionar-ataque')
+let sectionReiniciar = document.querySelector('#reiniciar')
+let botonMascotaJugador = document.querySelector('#boton-mascota')
+let botonFuego = document.querySelector('#boton-fuego')
+let botonAgua = document.querySelector('#boton-agua')
+let botonTierra = document.querySelector('#boton-tierra')
+let botonReiniciar = document.querySelector('#boton-reiniciar')
+let sectionSeleccionarMascota = document.querySelector('#seleccionar-mascota')
+let inputHipodoge = document.querySelector('#hipodoge')
+let inputCapipepo = document.querySelector('#capipepo')
+let inputRatigueya = document.querySelector('#ratigueya')
+let spanMascotaJugador = document.querySelector('#mascota-jugador')
+let spanMascotaEnemigo = document.querySelector('#mascota-enemigo')
+
 let ataqueJugador
 let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
 
 function iniciarJuego() {
-    let sectionSeleccionarAtaque = document.querySelector('#seleccionar-ataque')
     sectionSeleccionarAtaque.style.display = 'none'
-
-    let sectionReiniciar = document.querySelector('#reiniciar')
     sectionReiniciar.style.display = 'none'
-
-    let botonMascotaJugador = document.querySelector('#boton-mascota')
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)  
-
-    let botonFuego = document.querySelector('#boton-fuego')
     botonFuego.addEventListener('click', ataqueFuego)
-    let botonAgua = document.querySelector('#boton-agua')
     botonAgua.addEventListener('click', ataqueAgua)
-    let botonTierra = document.querySelector('#boton-tierra')
     botonTierra.addEventListener('click', ataqueTierra)
-
-    let botonReiniciar = document.querySelector('#boton-reiniciar')
     botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function seleccionarMascotaJugador() {
-    let sectionSeleccionarMascota = document.querySelector('#seleccionar-mascota')
     sectionSeleccionarMascota.style.display = 'none'
-
-    let sectionSeleccionarAtaque = document.querySelector('#seleccionar-ataque')
     sectionSeleccionarAtaque.style.display = 'flex'
-
-
-    let inputHipodoge = document.querySelector('#hipodoge')
-    let inputCapipepo = document.querySelector('#capipepo')
-    let inputRatigueya = document.querySelector('#ratigueya')
-
-    let spanMascotaJugador = document.querySelector('#mascota-jugador')
 
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = 'Hipodoge'
@@ -55,7 +48,7 @@ function seleccionarMascotaJugador() {
 
 function seleccionarMascotaEnemigo() {
     let mascotaAleatoria = numeroAleatorio(1, 3)
-    spanMascotaEnemigo = document.querySelector('#mascota-enemigo')
+    
 
     if (mascotaAleatoria == 1) {
         spanMascotaEnemigo.innerHTML = 'Hipodoge'
