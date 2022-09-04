@@ -35,7 +35,9 @@ class Mokepon {
     }
 }
 
-let hipodoge = new Mokepon()
+let hipodoge = new Mokepon('Hipodoge', '../imagen/hipodoge.png', 3)
+let capipepo = new Mokepon('Capipepo', '../imagen/capipepo.png', 3)
+let ratigueya = new Mokepon('Ratigueya', '../imagen/ratigueya.png', 3)
 
 function iniciarJuego() {
     sectionSeleccionarAtaque.style.display = 'none'
