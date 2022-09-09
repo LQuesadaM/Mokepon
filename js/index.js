@@ -100,11 +100,11 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarAtaque.style.display = 'flex'
 
     if (inputHipodoge.checked) {
-        spanMascotaJugador.innerHTML = 'Hipodoge'
+        spanMascotaJugador.innerHTML = inputHipodoge.id
     } else if (inputCapipepo.checked) {
-        spanMascotaJugador.innerHTML = 'Capipepo'
+        spanMascotaJugador.innerHTML = inputCapipepo.id
     } else if (inputRatigueya.checked) {
-        spanMascotaJugador.innerHTML = 'Ratigueya'
+        spanMascotaJugador.innerHTML = inputRatigueya.id
     } else {
         alert('Selecciona una mascota')
         reiniciarJuego()
@@ -115,18 +115,10 @@ function seleccionarMascotaJugador() {
 }
 
 function seleccionarMascotaEnemigo() {
-    let mascotaAleatoria = numeroAleatorio(1, 3)
+    let mascotaAleatoria = numeroAleatorio(0, mokepones.length -1)
     
-
-    if (mascotaAleatoria == 1) {
-        spanMascotaEnemigo.innerHTML = inputHipodoge.id
-    } else if (mascotaAleatoria == 2) {
-        spanMascotaEnemigo.innerHTML = inputCapipepo.id
-    } else if (mascotaAleatoria == 3) {
-        spanMascotaEnemigo.innerHTML = inputRatigueya.id
-    }
+    spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
 }
-
 
 function ataqueFuego() {
     ataqueJugador = 'FUEGO'
