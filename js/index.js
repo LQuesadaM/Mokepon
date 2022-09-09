@@ -119,11 +119,11 @@ function seleccionarMascotaEnemigo() {
     
 
     if (mascotaAleatoria == 1) {
-        spanMascotaEnemigo.innerHTML = 'Hipodoge'
+        spanMascotaEnemigo.innerHTML = inputHipodoge.id
     } else if (mascotaAleatoria == 2) {
-        spanMascotaEnemigo.innerHTML = 'Capipepo'
+        spanMascotaEnemigo.innerHTML = inputCapipepo.id
     } else if (mascotaAleatoria == 3) {
-        spanMascotaEnemigo.innerHTML = 'Ratigueya'
+        spanMascotaEnemigo.innerHTML = inputRatigueya.id
     }
 }
 
