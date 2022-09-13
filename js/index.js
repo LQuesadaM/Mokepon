@@ -32,6 +32,8 @@ let botonAgua
 let botonTierra
 let indexAtaqueJudador
 let indexAtaqueEnemigo
+let victoriasJugador = 0
+let victoriasEnemigo = 0
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -194,7 +196,7 @@ function starBattle() {
 }
 
 function indexAmbosOponentes(jugador, enemigo) {
-    indexAtaqueJudador = ataqueEnemigo[jugador]
+    indexAtaqueJudador = ataqueJugador[jugador]
     indexAtaqueEnemigo = ataqueEnemigo[enemigo]
 }
 
@@ -203,16 +205,39 @@ function combate() {
         if (ataqueJugador[index] == ataqueEnemigo[index]) {
             indexAmbosOponentes(index, index)
             crearMensaje('EMPATE!🤝')
-        }        
-    }
+        } else if (ataqueJugador[index] == 'FUEGO' && ataqueEnemigo[index] == 'TIERRA') {
+            indexAmbosOponentes(index, index)
+            crearMensaje('GANASTE!🏆')
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
+        } else if (ataqueJugador[index] == 'AGUA' && ataqueEnemigo[index] == 'FUEGO') {
+            indexAmbosOponentes(index, index)
+            crearMensaje('GANASTE!🏆')
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
+        } else if (ataqueJugador[index] == 'TIERRA' && ataqueEnemigo[index] == 'AGUA') {
+            indexAmbosOponentes(index, index)
+            crearMensaje('GANASTE!🏆')
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
+        } else {
+            indexAmbosOponentes(index, index)
+            crearMensaje('PERDISTE!😢')
+            victoriasEnemigo++
+            spanVidasEnemigo.innerHTML = victoriasEnemigo
+        }
+    } 
+        
     revizarVidas()
     desabilitarBotonesElementos()
 }
 
 function revizarVidas() {
-    if (vidasEnemigo == 0) {
-        alert('GANASTE EL JUEGO!🎉')
-    } else if (vidasJugador == 0) {
+    if (victoriasJugador == victoriasEnemigo) {
+        alert('Esto fue un empate!')
+    } else if (victoriasJugador > victoriasEnemigo) {
+        alert('FELICITACIONES Ganaste')
+    } else {
         alert('PERDISTE EL JUEGO!😜')
     }
     
