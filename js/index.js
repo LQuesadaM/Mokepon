@@ -154,14 +154,17 @@ function secuenciaAtaque() {
                 ataqueJugador.push('FUEGO')
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
             } else if (e.target.textContent == '💧') {
                 ataqueJugador.push('AGUA')
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
             } else {
                 ataqueJugador.push('TIERRA')
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
             }
             ataqueAleatorioEnemigo()
         })
@@ -229,7 +232,7 @@ function combate() {
     } 
         
     revizarVidas()
-    desabilitarBotonesElementos()
+    sectionReiniciar.style.display = 'block'
 }
 
 function revizarVidas() {
@@ -259,16 +262,6 @@ function crearMensaje(resultado) {
     elementoAtaqueJugador.innerHTML = indexAtaqueJudador
     elementoAtaqueEnemigo.innerHTML = indexAtaqueEnemigo
     spanResultadoBatalla.innerHTML = resultado
-}
-
-function desabilitarBotonesElementos() {
-    if (vidasJugador == 0 || vidasEnemigo == 0) {
-        botonFuego.disabled = true
-        botonAgua.disabled = true
-        botonTierra.disabled = true
-        
-        sectionReiniciar.style.display = 'block'
-    }
 }
 
 function reiniciarJuego() {

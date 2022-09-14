@@ -15,14 +15,14 @@ body {
 .titulo {
     color: white;
     font-size: 38px;
-    margin: 36px 0;
+    margin: 20px 0;
     font-family: 'Fredoka One', cursive;
 }
 
 .subtitulo {
     color: white;
     font-size: 26px;
-    margin: 25px 0;
+    margin: 10px 0;
 }
 
 #seleccionar-mascota {
@@ -96,16 +96,17 @@ input:checked + label {
 }
 
 .container-boton-ataques {
-    margin-bottom: 50px;
+    margin: 0 0 25px;
 }
 
 .boton-de-ataque {
     background-color: #2d72a6;
     padding: 10px;
+    margin-left: 15px;
     color: white;
     border-radius: 20px;
     border-color: transparent;
-    width: 100px;
+    width: 70px;
     cursor: pointer;
     font-family: 'Fredoka One', cursive;
 }
@@ -163,4 +164,13 @@ input:checked + label {
         margin: 20px 0; 
     }
 
+    .container-boton-ataques {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .boton-de-ataque {
+        margin: 5px;
+    }
 }
