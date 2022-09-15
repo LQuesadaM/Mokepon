@@ -16,6 +16,10 @@ const spanResultadoBatalla = document.querySelector('#resultado-batalla')
 const contenedorTarjetas = document.querySelector('#contenedor-tarjetas')
 const contenedorAtaques = document.querySelector('#contenedor-de-ataques')
 
+
+const sectionVerMapa = document.getElementById('ver-mapa')
+const mapa = document.getElementById('mapa')
+
 let mokepones = []
 let ataqueJugador = []
 let ataqueEnemigo = []
@@ -36,6 +40,7 @@ let victoriasJugador = 0
 let victoriasEnemigo = 0
 let vidasJugador = 3
 let vidasEnemigo = 3
+let lienzo = mapa.getContext('2d')  /* Nos permite usar el lienzo en 2d para dibujar en el canavas */
 
 class Mokepon {
     constructor(nombre, foto, vida) {
@@ -79,6 +84,7 @@ mokepones.push(hipodoge, capipepo, ratigueya)
 function iniciarJuego() {
     sectionSeleccionarAtaque.style.display = 'none'
     sectionReiniciar.style.display = 'none'
+    sectionVerMapa.style.display = 'none'
 
     mokepones.forEach((mokepon) => {
         opcionDeMokepones = `
@@ -103,7 +109,21 @@ function iniciarJuego() {
 
 function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display = 'none'
-    sectionSeleccionarAtaque.style.display = 'flex'
+    /* sectionSeleccionarAtaque.style.display = 'flex' */
+
+    /* Canvas */
+    sectionVerMapa.style.display = 'flex'
+    let imagenCapipepo = new Image()
+    imagenCapipepo.src = capipepo.foto
+    lienzo.drawImage(
+        imagenCapipepo,
+        20, /* 20px para x */
+        40, /* 40px para y */
+        100, /* 100px de ancho */
+        100 /* 100px de alto */
+    )
+
+
 
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = inputHipodoge.id
