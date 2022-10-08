@@ -4,6 +4,7 @@ const botonMascotaJugador = document.querySelector('#boton-mascota')
 const botonReiniciar = document.querySelector('#boton-reiniciar')
 const sectionSeleccionarMascota = document.querySelector('#seleccionar-mascota')
 
+
 const spanMascotaJugador = document.querySelector('#mascota-jugador')
 const spanMascotaEnemigo = document.querySelector('#mascota-enemigo')
 
@@ -15,7 +16,6 @@ const spanAtaqueDelEnemigo = document.querySelector('#ataque-del-enemigo')
 const spanResultadoBatalla = document.querySelector('#resultado-batalla')
 const contenedorTarjetas = document.querySelector('#contenedor-tarjetas')
 const contenedorAtaques = document.querySelector('#contenedor-de-ataques')
-
 
 const sectionVerMapa = document.getElementById('ver-mapa')
 const mapa = document.getElementById('mapa')
