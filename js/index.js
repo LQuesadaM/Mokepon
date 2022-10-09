@@ -62,6 +62,16 @@ class Mokepon {
         this.velocidadX = 0
         this.velocidadY = 0
     }
+
+    pintarMokepon() {
+        lienzo.drawImage(
+            this.mapaFoto,
+            this.x,
+            this.y,
+            this.ancho,
+            this.alto
+        )
+    }
 }
  /* Mascotas Jugador */
 let hipodoge = new Mokepon('Hipodoge', '../imagen/hipodoge.png', 5, './imagen/hipodoge-face.png')
@@ -69,9 +79,9 @@ let capipepo = new Mokepon('Capipepo', '../imagen/capipepo.png', 5, './imagen/ca
 let ratigueya = new Mokepon('Ratigueya', '../imagen/ratigueya.png', 5, './imagen/ratigueya-face.png')
 
 /* Mascota Enemigo */
-let hipodogeEnemigo = new Mokepon('Hipodoge', '../imagen/hipodoge.png', 5, './imagen/hipodoge-face.png')
-let capipepoEnemigo = new Mokepon('Capipepo', '../imagen/capipepo.png', 5, './imagen/capipepo-face.png')
-let ratigueyaEnemigo = new Mokepon('Ratigueya', '../imagen/ratigueya.png', 5, './imagen/ratigueya-face.png')
+let hipodogeEnemigo = new Mokepon('Hipodoge', '../imagen/hipodoge.png', 5, './imagen/hipodoge-face.png,', 80, 120)
+let capipepoEnemigo = new Mokepon('Capipepo', '../imagen/capipepo.png', 5, './imagen/capipepo-face.png', 140, 91)
+let ratigueyaEnemigo = new Mokepon('Ratigueya', '../imagen/ratigueya.png', 5, './imagen/ratigueya-face.png', 200, 190)
 
 
 hipodoge.ataques.push(
@@ -317,13 +327,10 @@ function pintarCanvas() {
         mapa.width,
         mapa.height
     )
-    lienzo.drawImage(
-        mascotaJugadorObjeto.mapaFoto,
-        mascotaJugadorObjeto.x,
-        mascotaJugadorObjeto.y,
-        mascotaJugadorObjeto.ancho,
-        mascotaJugadorObjeto.alto
-    )
+    mascotaJugadorObjeto.pintarMokepon()
+    hipodogeEnemigo.pintarMokepon()
+    capipepoEnemigo.pintarMokepon()
+    ratigueyaEnemigo.pintarMokepon()
 }
 
 function moverDerecha() {
