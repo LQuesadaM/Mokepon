@@ -159,11 +159,15 @@ input:checked + label {
     justify-content: center;
 }
 
-#mapa {
-    border: 2px solid black;
-    
+#ver-mapa button {
+    width: 80px;
+    height: 40px;
+    background-color: #11468f;
+    border-radius: 20px;
+    margin: 10px;
+    color: white;
+    cursor: pointer;
 }
-
 
 @media screen and (max-width: 600px) {
     .tarjetas {
@@ -186,3 +190,4 @@ input:checked + label {
         margin: 5px;
     }
 }
+
